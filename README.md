@@ -8,22 +8,23 @@ across systems. So let us extend the `shell` to remember things for us.
 For example, here are notes from a user interview:
 
 In my MacOS, I have all the commands I use frequently to build and compile my
-projects. There are various nuances to the commands and I greatly depend on
+projects. There are various nuances to the commands and I greatly depend on the
 shell's ability to auto-complete such commands. But when I switch to
 a different system, I have to either manually copy the shell history or I will
 have to type all the commands at least once again. Having my shell history
-synced across various machines becomes even more necessary when I am using
-temporary cloud VMs for testing or developing a specific feature.
+synced across various machines will be helpful. It becomes even more necessary
+when I am using temporary cloud VMs for testing or developing a specific
+feature.
 
-## Problem
+## Scope
 
-Our interns worked on building an [API for storing
-commands](https://github.com/safedep-hiring/swe-intern-problem-1). But we are
-lost now. We need your help in analysing the full problem statement given
-above, break it down into smaller tasks and write a plan of implementation. You
-don't have to implement everything but we encourage you to think as verbose as
-possible. Make a list of tasks including those that are likely not required to
-ship a minimum viable product (MVP).
+Our interns have already worked on a part of the problem. They built an [API
+for storing commands](https://github.com/safedep-hiring/swe-intern-problem-1).
+But we are lost now. We need your help in analysing the full problem statement
+given above, break it down into smaller tasks and write a plan of
+implementation. You don't have to implement everything but we encourage you to
+think as verbose as possible. Make a list of tasks including those that are
+likely not required to ship a minimum viable product (MVP).
 
 Once you have a plan of implementation, pick up the next task that you feel is
 needed and do a minimum implementation for the task. Take into consideration

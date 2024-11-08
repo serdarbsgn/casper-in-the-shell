@@ -26,9 +26,14 @@ implementation. You don't have to implement everything but we encourage you to
 think as verbose as possible. Make a list of tasks including those that are
 likely not required to ship a minimum viable product (MVP). Once you have a plan of implementation, pick up the next task that you feel is
 needed and do a minimum implementation for the task. Take into consideration
-what has already been done by our interns and do not repeat it.
+what has already been done by our interns.
 
 **The task that you choose must demonstrate your ability to write code for a production system.**
+
+### Deliverables
+
+1. GitHub issue with plan of implementation
+2. GitHub pull request implementing any one part of the solution
 
 ### Instructions
 
@@ -45,10 +50,11 @@ The reviewer should be able to run your application using
 ## Submission
 
 1. Create a [private fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) of this repository.
-2. Commit your code to the forked repository `dev` branch
-3. Create a pull request from your `dev` branch to your `main` branch
-4. Invite [@abhisek](https://github.com/abhisek) to your private fork repository
-5. Add `@abhisek` as a reviewer to the pull request
+2. Create the issue in your private fork of the repository
+3. Commit your code to the forked repository `dev` branch
+4. Create a pull request from your `dev` branch to your `main` branch in the private fork
+5. Invite [@abhisek](https://github.com/abhisek) to your private fork repository
+6. Add `@abhisek` as a reviewer to the pull request
 
 ## Questions?
 

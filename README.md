@@ -24,9 +24,9 @@ But we are lost now. We need your help in analysing the full problem statement
 given above, break it down into smaller tasks and write a plan of
 implementation. You don't have to implement everything but we encourage you to
 think as verbose as possible. Make a list of tasks including those that are
-likely not required to ship a minimum viable product (MVP). Once you have a plan of implementation, pick up the next task that you feel is
-needed and do a minimum implementation for the task. Take into consideration
-what has already been done by our interns.
+likely not required to ship a minimum viable product (MVP). Once you have a plan of implementation, 
+pick up the next task that you feel is needed and do a minimum implementation for the task. 
+Take into consideration what has already been done by our interns.
 
 **The task that you choose must demonstrate your ability to write code for a production system.**
 

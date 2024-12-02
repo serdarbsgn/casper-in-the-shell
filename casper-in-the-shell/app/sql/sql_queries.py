@@ -1,8 +1,11 @@
-from sqlalchemy import  delete, func, literal, select, update,desc,not_,exists
-from sqlalchemy.orm import aliased
+from sqlalchemy import (delete, desc, exists, func, literal, not_, select,
+                        update)
 from sqlalchemy.dialects.mysql import insert
+from sqlalchemy.orm import aliased
+from sqlalchemy.sql.functions import coalesce, concat, count
+
 from app.sql.tables import *
-from sqlalchemy.sql.functions import coalesce,concat,count
+
 
 class Select():
     def user(data):

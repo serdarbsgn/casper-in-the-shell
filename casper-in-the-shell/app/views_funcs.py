@@ -1,13 +1,16 @@
 from html import escape
-from fastapi import Form,Query, Request
+
+from fastapi import Form, Query, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-from app.sql.sql_queries import Insert, Select
-from app.sql.sql_connection import sqlconn
-from app.sql.tables import Command, Macro, User
+
 from app.main import app
+from app.sql.sql_connection import sqlconn
+from app.sql.sql_queries import Insert, Select
+from app.sql.tables import Command, Macro, User
 from app.utils import check_auth, listify
 from app.views_api import MsgResponse
+
 
 @app.get("/commands",
         summary="Search",
@@ -116,7 +119,7 @@ def fetch_macros(jwt:str = Query(description="Jwt used for auth.")):
         },401:{
             "description": "Show unauthorized message(Jwt doesn't exist, or expired.)",
         },400:{
-            "description": "Bad request, macro is empty or just whitespaces.",
+            "description": "Bad request, macro is empty or just whitespaces or macro name already exists/commands have incorrect command id in it",
         }
         })
 def save_macro(name: str = Form(max_length=255),commands: str = Form("",max_length=255) ,jwt:str = Query(description="Jwt used for auth.")):

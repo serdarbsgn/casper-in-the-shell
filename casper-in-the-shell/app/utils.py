@@ -1,6 +1,9 @@
 from datetime import datetime
+
 import jwt
+
 from .sql.env_init import JWT_SECRET_KEY
+
 
 def decode_jwt_token(encoded_content):
     try:

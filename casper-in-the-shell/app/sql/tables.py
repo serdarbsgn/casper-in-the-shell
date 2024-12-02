@@ -1,4 +1,5 @@
-from sqlalchemy import Column, DateTime, Integer, Text, DECIMAL,ForeignKey,String
+from sqlalchemy import (DECIMAL, Column, DateTime, ForeignKey, Integer, String,
+                        Text)
 from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()

@@ -1,5 +1,7 @@
-from dotenv import load_dotenv
 import os
+
+from dotenv import load_dotenv
+
 load_dotenv()
 
 MYSQL_USER = os.getenv("MYSQL_USER")

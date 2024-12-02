@@ -1,11 +1,19 @@
+#!/usr/bin/env python3
+
 import argparse
-from getpass import getpass
-import requests
-import json
 import os
+from getpass import getpass
+
+try:
+    import requests
+except ImportError:
+    print("requests library not found, installing...")
+    os.system("pip install requests")
+    import requests
+
 
 # Define your API URL
-API_URL = "http://localhost:8002/api"  # Change this to your actual API URL
+API_URL = "http://localhost:8002/api"
 
 # Function to make the register request
 def register(username):
@@ -37,7 +45,6 @@ def command_search(keyword, limit,includeids,jwt):
     params = {'keyword': keyword,"limit":limit,"include_ids":includeids,"jwt":jwt}
     response = requests.get(url, params=params)
     if response.status_code == 200:
-        # print(f"Search results for '{keyword}':")
         search_result = response.json().get('msg')
         if includeids:
             for command in search_result:
@@ -109,7 +116,7 @@ def main():
     
     # Search subcommand
     search_parser = subparsers.add_parser('search', help="Search for commands",aliases=['sc'])
-    search_parser.add_argument('-kw', '--keyword', required=True, help="Keyword to search for")
+    search_parser.add_argument('-kw', '--keyword',default="", required=False, help="Keyword to search for")
     search_parser.add_argument('-l', '--limit',default=0, required=False, help="Limit returned command count, not using this will return all commands that match.")
     search_parser.add_argument('-ii', '--includeids',default=False, required=False, help="Include ids to create macros from.")
 
@@ -117,7 +124,7 @@ def main():
     save_parser.add_argument('-cmd', '--command', required=True, help="Command to save")
 
     macro_search_parser = subparsers.add_parser('macro-search', help="Fetch commands of given macro name",aliases=['msc'])
-    macro_search_parser.add_argument('-n', '--name', required=True, help="Name of macro to fetch commands")
+    macro_search_parser.add_argument('-n', '--name',default="", required=False, help="Name of macro to fetch commands")
 
     macro_fetch_parser = subparsers.add_parser('macro-names', help="Fetch all user saved macro names",aliases=['mn'])
 

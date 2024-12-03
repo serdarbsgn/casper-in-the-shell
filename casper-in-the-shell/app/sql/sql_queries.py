@@ -27,8 +27,9 @@ class Select():
             subquery = select(Macro.id).where(Macro.user_id == data["user_id"], Macro.name == data["name"]).subquery()
         else:
             subquery = select(Macro.id).where(Macro.user_id == data["user_id"]).order_by(Macro.id.desc()).limit(1).subquery()
-        command_ids_subquery = select(MacroCommand.command_id).where(MacroCommand.macro_id.in_(subquery)).order_by(MacroCommand.order).subquery()
-        return select(Command.command).where(Command.id.in_(command_ids_subquery))
+        command_ids_subquery = select(MacroCommand.command_id,MacroCommand.order).where(MacroCommand.macro_id.in_(subquery)).order_by(MacroCommand.order)
+        return select(Command.command).where(Command.id == command_ids_subquery.c.command_id).order_by(command_ids_subquery.c.order)
+    
     def macro_exists(data):
         return select(Macro.id).where(Macro.user_id == data["user_id"], Macro.name == data["name"])
     
